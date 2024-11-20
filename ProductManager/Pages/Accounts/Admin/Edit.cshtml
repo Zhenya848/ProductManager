@@ -1,0 +1,61 @@
+﻿@page "{id:guid}"
+@model ProductManager.Pages.Accounts.Admin.EditModel
+@{
+}
+
+@if (Model.IsHavePermission)
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Изменение пользователя</h1>
+        </div>
+    </div>
+
+    <div>
+        <div class="container">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="Id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="Id" asp-for="User.Id" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="UserName" class="form-label">Имя пользователя</label>
+                    <input type="text" class="form-control" id="UserName" asp-for="User.UserName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="FullName" class="form-label">Полное имя пользователя</label>
+                    <input type="text" class="form-control" id="FullName" asp-for="User.FullName">
+                </div>
+            
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Почта</label>
+                    <input type="email" class="form-control" id="Email" asp-for="User.Email">
+                </div>
+
+                <div class="mb-3 d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit" asp-page-handler="Update">Изменить</button>
+                    <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Удалить</button>
+                </div>
+            </form>
+
+            @if (string.IsNullOrEmpty(Model.ErrorMessage) == false)
+            {
+                <script type="text/javascript" >
+                    window.onload = function () {
+                        alert("@Model.ErrorMessage");
+                    };
+                </script>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Ошибка 403: У пользователя недостаточно прав</h1>
+        </div>
+    </div>
+}

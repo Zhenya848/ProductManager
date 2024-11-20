@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CSharpFunctionalExtensions" Version="3.1.0" />
+      <PackageReference Include="DotNetEnv" Version="3.1.1" />
+      <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+      <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
+      <PackageReference Include="Scrutor" Version="5.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Products\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Products\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Products\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Products\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Products\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Products\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Products\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Index.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Create.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Details.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Views\Products\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Pages\Index.cshtml" />
+      <AdditionalFiles Include="Pages\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <AdditionalFiles Include="Pages\_ViewImports.cshtml" />
+      <AdditionalFiles Include="Pages\_ViewStart.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+      <Folder Include="Pages\Accounts\Admin\" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,67 @@
+﻿@page
+@model ProductManager.Pages.Accounts.Admin.ListModel
+@{
+}
+
+@if (Model.IsHavePermission)
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Все пользователи</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="SearchString" class="form-label">Найти по имени: </label>
+                <input type="text" class="form-control" id="SearchString" name="SearchString">
+            </div>
+            
+            <div class="mb-3">
+                <label for="OrderBy" class="form-label">Сортировать по свойству: </label>
+                <input type="text" class="form-control" id="OrderBy" name="OrderBy">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Применить</button>
+            </div>
+        </form>
+        
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>Имя</td>
+                <td>Полное имя</td>
+                <td>Почта</td>
+                <td>Роль</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.NameOfUser</td>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.RoleNames</td>
+
+                    <td><a href="/Accounts/Admin/Edit/@user.Id">Изменить</a></td>
+                    <td><a href="/Accounts/Admin/EditRole/@user.Id">Присвоить роль</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Ошибка 403: У пользователя недостаточно прав</h1>
+        </div>
+    </div>
+}

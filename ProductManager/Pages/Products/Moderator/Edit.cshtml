@@ -1,0 +1,76 @@
+﻿@page "{id:guid}"
+@model EditModel
+@{
+}
+
+@if (Model.IsHavePermission)
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+    <div class="container">
+        <h1>Изменение товара</h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="Id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="Id" asp-for="Product.Id" readonly>
+            </div>
+            
+            <div class="mb-3">
+                <label for="ProductName" class="form-label">Название продукта</label>
+                <input type="text" class="form-control" id="ProductName" asp-for="Product.ProductName">
+            </div>
+
+            <div class="mb-3">
+                <label for="Type" class="form-label">Тип</label>
+                <input type="text" class="form-control" id="Type" asp-for="Product.Type">
+            </div>
+
+            <div class="mb-3">
+                <label for="Price" class="form-label">Цена</label>
+                <input type="number" class="form-control" id="Price" asp-for="Product.Price">
+            </div>
+
+            <div class="mb-3">
+                <label for="Description" class="form-label">Описание</label>
+                <textarea class="form-control" id="Description" asp-for="Product.Description"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="FunctionalRequirements" class="form-label">Характеристики</label>
+                <textarea class="form-control" id="FunctionalRequirements" asp-for="Product.FunctionalRequirements"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="ExpirationDate" class="form-label">Срок годности</label>
+                <input type="date" class="form-control" id="ExpirationDate" asp-for="Product.ExpirationDate">
+            </div>
+
+            <div class="mb-3 d-flex justify-content-between">
+                <button class="btn btn-primary" type="submit" asp-page-handler="Update">Изменить</button>
+                <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Удалить</button>
+            </div>
+        </form>
+
+        @if (string.IsNullOrEmpty(Model.ErrorMessage) == false)
+        {
+            <script type="text/javascript" >
+                window.onload = function () {
+                    alert("@Model.ErrorMessage");
+                };
+            </script>
+        }
+    </div>
+</div>
+}
+else
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Ошибка 403: У пользователя недостаточно прав</h1>
+        </div>
+    </div>
+}

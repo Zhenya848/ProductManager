@@ -1,0 +1,39 @@
+﻿@page
+@model ProductManager.Pages.Accounts.LoginModel
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2 mb-5">
+    <div class="container">
+        <h1>Вход</h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="Email" class="form-label">Почта</label>
+                <input type="email" class="form-control" id="Email" asp-for="User.Email">
+            </div>
+
+            <div class="mb-3">
+                <label for="Password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="Password" name="Password">
+            </div>
+
+            <div class="mb-3" id="loginButton">
+                <button class="btn btn-primary" type="submit">Войти</button>
+            </div>
+        </form>
+
+        @if (string.IsNullOrEmpty(Model.ErrorMessage) == false)
+        {
+            <script type="text/javascript" >
+                window.onload = function () {
+                    alert("@Model.ErrorMessage");
+                };
+            </script>
+        }
+    </div>
+</div>

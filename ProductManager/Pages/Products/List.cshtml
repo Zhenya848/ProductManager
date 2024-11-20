@@ -1,0 +1,68 @@
+﻿@page
+@model ProductManager.Pages.Products.ListModel
+@{
+}
+
+@if (Model.IsHavePermissions)
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Все товары</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="SearchString" class="form-label">Найти по имени: </label>
+                <input type="text" class="form-control" id="SearchString" name="SearchString">
+            </div>
+            
+            <div class="mb-3">
+                <label for="OrderBy" class="form-label">Сортировать по свойству: </label>
+                <input type="text" class="form-control" id="OrderBy" name="OrderBy">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Применить</button>
+            </div>
+        </form>
+    
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Название</td>
+                <td>Тип</td>
+                <td>Описание</td>
+                <td>Характеристики</td>
+                <td>Цена</td>
+                <td>Срок годности</td>
+            
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <td>@product.ProductName</td>
+                        <td>@product.Type</td>
+                        <td>@product.Description</td>
+                        <td>@product.FunctionalRequirements</td>
+                        <td>@product.Price</td>
+                        <td>@product.ExpirationDate</td>
+
+                        <td><a href="/Products/Moderator/Edit/@product.Id">Изменить</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="bg-secondary bg-opacity-10 py-2 mb-5">
+        <div class="container">
+            <h1>Ошибка 401: Пользователь не зарегистрирован</h1>
+        </div>
+    </div>
+}

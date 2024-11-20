@@ -1,0 +1,44 @@
+{
+  "Roles" : {
+    "Пользователь" : [
+      "products.get"
+    ],
+    
+    "Модератор" : [
+      "products.create",
+      "products.delete",
+      "products.update",
+      "products.get"
+    ],
+    
+    "Администратор" : [
+      "products.create",
+      "products.delete",
+      "products.update",
+      "products.get",
+      
+      "users.get",
+      "user.get",
+      "user.create",
+      "user.delete",
+      "user.update"
+    ]
+  },
+  
+  "Permissions" : {
+    "ProductsManagement" : [
+      "products.create",
+      "products.delete",
+      "products.update",
+      "products.get"
+    ],
+
+    "UserManagement" : [
+      "users.get",
+      "user.get",
+      "user.create",
+      "user.delete",
+      "user.update"
+    ]
+  }
+}
